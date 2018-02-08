@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img alt="ETEC" src="../content/imagens/imagem12.jpg" height="30px">
+            </a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Cursos <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#!/curso/listar">Listar</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#!/curso/novo">Novo</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">Alunos <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#!/aluno/listar">Listar</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#!/aluno/novo">Novo</a></li>
+                </ul>
+            </li>
+        </ul> 
+        <ul class="nav navbar-nav navbar-right" ng-controller="loginCtrl as vm">
+            <li ng-if="usuario"><a href="javascript:void(0);" ng-click="vm.logout()">Sair, <em>{{ usuario.email }}</em></a></li>
+        </ul>                  
+    </div>
+</nav>

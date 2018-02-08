@@ -1,0 +1,35 @@
+<html ng-app="escola">
+  <head>
+    <meta charset="utf-8">
+    <title>Escola - ETEC</title>
+    <meta name="description" content="Bem vindo à Escola ETEC" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="node_modules/toastr/build/toastr.css" />
+    <link rel="stylesheet" href="content/css/escola.css">
+  </head>
+  <body>
+    <div ng-include="'menu/menu.html'"></div>
+    <div class="container" ng-view></div>
+
+    <!-- Scripts Componentes -->
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/toastr/toastr.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    
+    <!-- Scripts AngularJS -->
+    <script src="app.module.js"></script>
+    <script src="app.router.js"></script>
+    <script src="app.run.js"></script>
+    
+    <!-- Controllers -->
+    <script src="login/login.controller.js"></script>
+    <script src="curso/curso.lista.controller.js"></script>
+    <script src="curso/curso.novo.alterar.controller.js"></script>
+    <script src="aluno/aluno.lista.controller.js"></script>    
+    <script src="aluno/aluno.novo.alterar.controller.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<div class="col-md-4 col-md-offset-4">
+    <div class="panel panel-default">
+        <div class="panel-heading text-center">
+            Identifique-se
+        </div>
+        <div class="panel-body">
+            <form name="formLogin" ng-submit="vm.login()" novalidate>
+                <div class="form-group" ng-class="{ 'has-error' : formLogin.email.$invalid && formLogin.email.$dirty }">
+                    <label for="email">E-Mail</label>
+                    <input type="email" class="form-control" id="email" name="email" ng-model="vm.usuario.email" required/>
+                </div>
+                <div class="form-group" ng-class="{ 'has-error' : formLogin.senha.$invalid && formLogin.senha.$dirty }">
+                    <label for="senha">Senha</label>
+                    <input type="password" class="form-control" id="senha" name="senha" ng-model="vm.usuario.senha" required/>
+                </div>                
+                <button type="submit" class="btn btn-primary btn-block" ng-disabled="formLogin.$invalid">
+                    Acessar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

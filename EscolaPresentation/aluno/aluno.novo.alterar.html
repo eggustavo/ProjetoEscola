@@ -1,0 +1,47 @@
+<h3 ng-if="!vm.aluno.id">Novo Aluno</h3>
+<h3 ng-if="vm.aluno.id">Alterar Aluno</h3>
+<hr>
+<form name="formAluno" id="formAluno" ng-submit="vm.salvar()" novalidate>
+    <div class="row">
+        <div class="form-group col-md-9">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control" ng-model="vm.aluno.nome" ng-minlength="3" ng-maxlength="100" required autofocus/>
+            <span class="text-danger" ng-show="formAluno.nome.$dirty && formAluno.nome.$error.required">Nome Obrigatório</span>
+            <span class="text-danger" ng-show="formAluno.nome.$dirty && formAluno.nome.$error.minlength">Nome deve ter no mínimo 3 caracteres</span>
+            <span class="text-danger" ng-show="formAluno.nome.$dirty && formAluno.nome.$error.maxlength">Nome deve ter no máximo 100 caracteres</span>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="nome">Sexo</label>
+            <br>
+            <input type="radio" class="radio-inline" name="sexo" ng-model="vm.aluno.sexo" value="M" ng-init="vm.aluno.sexo = 'M'"> Masculino
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" class="radio-inline" name="sexo" ng-model="vm.aluno.sexo" value="F"> Feminino
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-3">
+            <label for="telefone">Telefone</label>
+            <input type="text" id="telefone" name="telefone" class="form-control" ng-model="vm.aluno.telefone" required/>
+            <span class="text-danger" ng-show="formAluno.telefone.$dirty && formAluno.telefone.$error.required">Telefone Obrigatório</span>
+        </div>
+        <div class="form-group col-md-9">
+            <label for="curso">Curso</label>
+            <select id="curso" ng-model="vm.aluno.cursoId" class="form-control"
+                ng-options="curso.id as curso.nome for curso in vm.cursos" required>
+            </select>
+            <span class="text-danger" ng-show="formaluno.curso.$dirty && formaluno.curso.$error.required">Curso Obrigatório</span>
+        </div>
+    </div>
+    <footer>
+        <div class="pull-right">
+            <button class="btn btn-success" type="submit" ng-disabled="formAluno.$invalid">
+                <span class="glyphicon glyphicon-ok"></span>
+                Confirmar
+            </button>
+            <a href="#!/aluno/listar" class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span>                
+                Cancelar
+            </a>
+        </div>
+    </footer>
+</form>
